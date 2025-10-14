@@ -1,0 +1,2 @@
+# Ploggify
+OpenSource Software Assignment
