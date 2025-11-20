@@ -3,7 +3,7 @@ import os
 
 # --- 설정 정보 ---
 API_URL = "https://serverless.roboflow.com"
-API_KEY = "UXMsKtjYlQ1FR7uJ73OI" 
+API_KEY = "API 키" 
 MODEL_ID = "yolov8-trash-detections/6"
 
 def run_detection(image_path):
