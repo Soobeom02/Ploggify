@@ -1,13 +1,17 @@
 {
   "routes": [
     {
-      "id": 1,
+      "route_id": 1,
       "name": "한강 마포 러닝 코스",
       "location": "서울시 마포구",
-      "distance_km": 3.2,
       "estimated_time_min": 30,
-      "trashMode": "more",
-      "trashLevel": 3,
+      "calories_burn": 180,
+      "metrics": {
+        "distance_km": 3.2,
+        "elevation_gain": 5,
+        "curvature": 0.10
+      },
+      "litter_total": 44,
       "coords": [
         [37.5447, 126.8965],
         [37.5458, 126.8973],
@@ -16,13 +20,17 @@
       ]
     },
     {
-      "id": 2,
+      "route_id": 2,
       "name": "성수 뚝섬 러닝 루트",
       "location": "서울시 성동구",
-      "distance_km": 2.4,
       "estimated_time_min": 22,
-      "trashMode": "more",
-      "trashLevel": 4,
+      "calories_burn": 155,
+      "metrics": {
+        "distance_km": 2.4,
+        "elevation_gain": 3,
+        "curvature": 0.05
+      },
+      "litter_total": 62,
       "coords": [
         [37.5311, 127.0456],
         [37.5323, 127.0469],
@@ -31,13 +39,17 @@
       ]
     },
     {
-      "id": 3,
+      "route_id": 3,
       "name": "올림픽공원 순환 러닝 코스",
       "location": "서울시 송파구",
-      "distance_km": 4.2,
       "estimated_time_min": 40,
-      "trashMode": "less",
-      "trashLevel": 1,
+      "calories_burn": 240,
+      "metrics": {
+        "distance_km": 4.2,
+        "elevation_gain": 12,
+        "curvature": 0.20
+      },
+      "litter_total": 28,
       "coords": [
         [37.5164, 127.1211],
         [37.5174, 127.1220],
@@ -46,13 +58,17 @@
       ]
     },
     {
-      "id": 4,
+      "route_id": 4,
       "name": "서울숲 러닝 산책 코스",
       "location": "서울시 성동구",
-      "distance_km": 3.6,
       "estimated_time_min": 35,
-      "trashMode": "less",
-      "trashLevel": 1,
+      "calories_burn": 210,
+      "metrics": {
+        "distance_km": 3.6,
+        "elevation_gain": 8,
+        "curvature": 0.12
+      },
+      "litter_total": 12,
       "coords": [
         [37.5440, 127.0373],
         [37.5452, 127.0383],
@@ -61,13 +77,17 @@
       ]
     },
     {
-      "id": 5,
+      "route_id": 5,
       "name": "남산 업힐 러닝 코스",
       "location": "서울시 중구",
-      "distance_km": 5.1,
       "estimated_time_min": 55,
-      "trashMode": "more",
-      "trashLevel": 2,
+      "calories_burn": 410,
+      "metrics": {
+        "distance_km": 5.1,
+        "elevation_gain": 150,
+        "curvature": 0.30
+      },
+      "litter_total": 33,
       "coords": [
         [37.5531, 126.9904],
         [37.5542, 126.9916],
@@ -76,13 +96,17 @@
       ]
     },
     {
-      "id": 6,
+      "route_id": 6,
       "name": "양재천 가벼운 조깅 코스",
       "location": "서울시 서초구",
-      "distance_km": 3.0,
       "estimated_time_min": 28,
-      "trashMode": "more",
-      "trashLevel": 3,
+      "calories_burn": 170,
+      "metrics": {
+        "distance_km": 3.0,
+        "elevation_gain": 4,
+        "curvature": 0.08
+      },
+      "litter_total": 51,
       "coords": [
         [37.4723, 127.0384],
         [37.4733, 127.0395],
@@ -91,13 +115,17 @@
       ]
     },
     {
-      "id": 7,
+      "route_id": 7,
       "name": "분당 탄천 직선 러닝 코스",
       "location": "경기도 성남시 분당구",
-      "distance_km": 2.8,
       "estimated_time_min": 25,
-      "trashMode": "less",
-      "trashLevel": 1,
+      "calories_burn": 160,
+      "metrics": {
+        "distance_km": 2.8,
+        "elevation_gain": 2,
+        "curvature": 0.03
+      },
+      "litter_total": 19,
       "coords": [
         [37.3792, 127.1301],
         [37.3803, 127.1310],
@@ -106,13 +134,17 @@
       ]
     },
     {
-      "id": 8,
+      "route_id": 8,
       "name": "잠실 호수 러닝 루트",
       "location": "서울시 송파구",
-      "distance_km": 3.4,
       "estimated_time_min": 32,
-      "trashMode": "less",
-      "trashLevel": 1,
+      "calories_burn": 190,
+      "metrics": {
+        "distance_km": 3.4,
+        "elevation_gain": 6,
+        "curvature": 0.18
+      },
+      "litter_total": 26,
       "coords": [
         [37.5131, 127.1034],
         [37.5142, 127.1045],
@@ -121,13 +153,17 @@
       ]
     },
     {
-      "id": 9,
+      "route_id": 9,
       "name": "안양천 플로깅 코스",
       "location": "경기도 안양시",
-      "distance_km": 4.5,
       "estimated_time_min": 45,
-      "trashMode": "more",
-      "trashLevel": 5,
+      "calories_burn": 260,
+      "metrics": {
+        "distance_km": 4.5,
+        "elevation_gain": 9,
+        "curvature": 0.10
+      },
+      "litter_total": 78,
       "coords": [
         [37.4022, 126.9223],
         [37.4033, 126.9234],
@@ -136,13 +172,17 @@
       ]
     },
     {
-      "id": 10,
+      "route_id": 10,
       "name": "청계천 도심 러닝 코스",
       "location": "서울시 종로구",
-      "distance_km": 2.9,
       "estimated_time_min": 27,
-      "trashMode": "more",
-      "trashLevel": 5,
+      "calories_burn": 165,
+      "metrics": {
+        "distance_km": 2.9,
+        "elevation_gain": 1,
+        "curvature": 0.06
+      },
+      "litter_total": 85,
       "coords": [
         [37.5682, 126.9824],
         [37.5691, 126.9835],

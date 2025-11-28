@@ -32,6 +32,10 @@ public class Route {
     @Column(name = "estimated_calories")
     private int estimatedCalories;
 
+    // Flutter에서 요구하는 추가 필드
+    private String trashMode;   // "more" / "less"
+    private int trashLevel;     // 1~5 같은 숫자
+    
     // 코스 좌표들
     @OneToMany(mappedBy = "route", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RouteCoord> coords;

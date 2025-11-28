@@ -22,3 +22,17 @@ public class RouteController {
         return ResponseEntity.ok(saved.getId());  // 저장된 route_id 반환
     }
 }
+//신규 기능: UserPreference 입력(목표,목표시간)을 받아 추천 경로 생성 + DB 저장
+
+@PostMapping("/recommend")
+public ResponseEntity<?> recommend(@RequestBody UserPreference pref) {
+
+    Route result = routeService.recommendAndSave(pref);
+
+    if (result == null) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body("조건에 맞는 추천 경로가 없습니다.");
+    }
+
+    return ResponseEntity.ok(result);
+}
