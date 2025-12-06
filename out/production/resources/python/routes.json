@@ -1,0 +1,804 @@
+{
+  "routes": [
+    {
+      "id": 1,
+      "name": "Dawn Jogging Trail",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 3.5,
+      "estimated_time_min": 54,
+      "trashLevel": 5
+    },
+    {
+      "id": 2,
+      "name": "Dawn Running Road",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 2.3,
+      "estimated_time_min": 59,
+      "trashLevel": 1
+    },
+    {
+      "id": 3,
+      "name": "Dawn Walking Trail",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 4.0,
+      "estimated_time_min": 52,
+      "trashLevel": 5
+    },
+    {
+      "id": 4,
+      "name": "Dawn Plogging Course",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 3.5,
+      "estimated_time_min": 53,
+      "trashLevel": 5
+    },
+    {
+      "id": 5,
+      "name": "Dawn Loop Trail",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 5.9,
+      "estimated_time_min": 59,
+      "trashLevel": 5
+    },
+    {
+      "id": 6,
+      "name": "Dawn Trail",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 5.8,
+      "estimated_time_min": 23,
+      "trashLevel": 4
+    },
+    {
+      "id": 7,
+      "name": "Dawn Forest Path",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 2.7,
+      "estimated_time_min": 50,
+      "trashLevel": 1
+    },
+    {
+      "id": 8,
+      "name": "Dawn Lakeside Trail",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 2.7,
+      "estimated_time_min": 44,
+      "trashLevel": 4
+    },
+    {
+      "id": 9,
+      "name": "Dawn Riverside Path",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 3.7,
+      "estimated_time_min": 43,
+      "trashLevel": 4
+    },
+    {
+      "id": 10,
+      "name": "Dawn Strolling Path",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 2.6,
+      "estimated_time_min": 37,
+      "trashLevel": 5
+    },
+    {
+      "id": 11,
+      "name": "Sunset Jogging Trail",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 2.2,
+      "estimated_time_min": 46,
+      "trashLevel": 3
+    },
+    {
+      "id": 12,
+      "name": "Sunset Running Road",
+      "location": "Gangdong-gu, Seoul",
+      "distance_km": 3.7,
+      "estimated_time_min": 34,
+      "trashLevel": 4
+    },
+    {
+      "id": 13,
+      "name": "Sunset Walking Trail",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 2.1,
+      "estimated_time_min": 28,
+      "trashLevel": 3
+    },
+    {
+      "id": 14,
+      "name": "Sunset Plogging Course",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 5.4,
+      "estimated_time_min": 36,
+      "trashLevel": 2
+    },
+    {
+      "id": 15,
+      "name": "Sunset Loop Trail",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 3.5,
+      "estimated_time_min": 32,
+      "trashLevel": 5
+    },
+    {
+      "id": 16,
+      "name": "Sunset Trail",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 2.8,
+      "estimated_time_min": 32,
+      "trashLevel": 1
+    },
+    {
+      "id": 17,
+      "name": "Sunset Forest Path",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 4.1,
+      "estimated_time_min": 55,
+      "trashLevel": 2
+    },
+    {
+      "id": 18,
+      "name": "Sunset Lakeside Trail",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 4.4,
+      "estimated_time_min": 52,
+      "trashLevel": 5
+    },
+    {
+      "id": 19,
+      "name": "Sunset Riverside Path",
+      "location": "Gangnam-gu, Seoul",
+      "distance_km": 4.5,
+      "estimated_time_min": 60,
+      "trashLevel": 5
+    },
+    {
+      "id": 20,
+      "name": "Sunset Strolling Path",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 4.1,
+      "estimated_time_min": 51,
+      "trashLevel": 1
+    },
+    {
+      "id": 21,
+      "name": "Sunshine Jogging Trail",
+      "location": "Gangnam-gu, Seoul",
+      "distance_km": 5.0,
+      "estimated_time_min": 28,
+      "trashLevel": 3
+    },
+    {
+      "id": 22,
+      "name": "Sunshine Running Road",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 3.1,
+      "estimated_time_min": 53,
+      "trashLevel": 4
+    },
+    {
+      "id": 23,
+      "name": "Sunshine Walking Trail",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 2.3,
+      "estimated_time_min": 20,
+      "trashLevel": 4
+    },
+    {
+      "id": 24,
+      "name": "Sunshine Plogging Course",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 2.7,
+      "estimated_time_min": 33,
+      "trashLevel": 4
+    },
+    {
+      "id": 25,
+      "name": "Sunshine Loop Trail",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 4.3,
+      "estimated_time_min": 24,
+      "trashLevel": 5
+    },
+    {
+      "id": 26,
+      "name": "Sunshine Trail",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 3.1,
+      "estimated_time_min": 24,
+      "trashLevel": 5
+    },
+    {
+      "id": 27,
+      "name": "Sunshine Forest Path",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 3.4,
+      "estimated_time_min": 34,
+      "trashLevel": 5
+    },
+    {
+      "id": 28,
+      "name": "Sunshine Lakeside Trail",
+      "location": "Gangnam-gu, Seoul",
+      "distance_km": 3.1,
+      "estimated_time_min": 54,
+      "trashLevel": 5
+    },
+    {
+      "id": 29,
+      "name": "Sunshine Riverside Path",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 2.7,
+      "estimated_time_min": 31,
+      "trashLevel": 4
+    },
+    {
+      "id": 30,
+      "name": "Sunshine Strolling Path",
+      "location": "Gangnam-gu, Seoul",
+      "distance_km": 3.3,
+      "estimated_time_min": 40,
+      "trashLevel": 5
+    },
+    {
+      "id": 31,
+      "name": "Moonlight Jogging Trail",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 3.0,
+      "estimated_time_min": 35,
+      "trashLevel": 3
+    },
+    {
+      "id": 32,
+      "name": "Moonlight Running Road",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 2.5,
+      "estimated_time_min": 44,
+      "trashLevel": 3
+    },
+    {
+      "id": 33,
+      "name": "Moonlight Walking Trail",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 5.0,
+      "estimated_time_min": 45,
+      "trashLevel": 3
+    },
+    {
+      "id": 34,
+      "name": "Moonlight Plogging Course",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 3.4,
+      "estimated_time_min": 51,
+      "trashLevel": 5
+    },
+    {
+      "id": 35,
+      "name": "Moonlight Loop Trail",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 5.9,
+      "estimated_time_min": 55,
+      "trashLevel": 1
+    },
+    {
+      "id": 36,
+      "name": "Moonlight Trail",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 3.5,
+      "estimated_time_min": 35,
+      "trashLevel": 1
+    },
+    {
+      "id": 37,
+      "name": "Moonlight Forest Path",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 4.5,
+      "estimated_time_min": 20,
+      "trashLevel": 4
+    },
+    {
+      "id": 38,
+      "name": "Moonlight Lakeside Trail",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 4.4,
+      "estimated_time_min": 22,
+      "trashLevel": 1
+    },
+    {
+      "id": 39,
+      "name": "Moonlight Riverside Path",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 4.0,
+      "estimated_time_min": 33,
+      "trashLevel": 1
+    },
+    {
+      "id": 40,
+      "name": "Moonlight Strolling Path",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 3.6,
+      "estimated_time_min": 41,
+      "trashLevel": 2
+    },
+    {
+      "id": 41,
+      "name": "Starlight Jogging Trail",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 4.0,
+      "estimated_time_min": 48,
+      "trashLevel": 5
+    },
+    {
+      "id": 42,
+      "name": "Starlight Running Road",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 5.5,
+      "estimated_time_min": 22,
+      "trashLevel": 4
+    },
+    {
+      "id": 43,
+      "name": "Starlight Walking Trail",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 4.0,
+      "estimated_time_min": 22,
+      "trashLevel": 4
+    },
+    {
+      "id": 44,
+      "name": "Starlight Plogging Course",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 3.0,
+      "estimated_time_min": 38,
+      "trashLevel": 2
+    },
+    {
+      "id": 45,
+      "name": "Starlight Loop Trail",
+      "location": "Gangnam-gu, Seoul",
+      "distance_km": 5.8,
+      "estimated_time_min": 40,
+      "trashLevel": 3
+    },
+    {
+      "id": 46,
+      "name": "Starlight Trail",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 5.0,
+      "estimated_time_min": 41,
+      "trashLevel": 4
+    },
+    {
+      "id": 47,
+      "name": "Starlight Forest Path",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 4.1,
+      "estimated_time_min": 29,
+      "trashLevel": 4
+    },
+    {
+      "id": 48,
+      "name": "Starlight Lakeside Trail",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 5.3,
+      "estimated_time_min": 26,
+      "trashLevel": 5
+    },
+    {
+      "id": 49,
+      "name": "Starlight Riverside Path",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 5.8,
+      "estimated_time_min": 57,
+      "trashLevel": 5
+    },
+    {
+      "id": 50,
+      "name": "Starlight Strolling Path",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 5.2,
+      "estimated_time_min": 39,
+      "trashLevel": 1
+    },
+    {
+      "id": 51,
+      "name": "Breeze Jogging Trail",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 4.0,
+      "estimated_time_min": 33,
+      "trashLevel": 5
+    },
+    {
+      "id": 52,
+      "name": "Breeze Running Road",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 4.5,
+      "estimated_time_min": 50,
+      "trashLevel": 1
+    },
+    {
+      "id": 53,
+      "name": "Breeze Walking Trail",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 2.8,
+      "estimated_time_min": 33,
+      "trashLevel": 4
+    },
+    {
+      "id": 54,
+      "name": "Breeze Plogging Course",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 2.5,
+      "estimated_time_min": 35,
+      "trashLevel": 2
+    },
+    {
+      "id": 55,
+      "name": "Breeze Loop Trail",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 5.1,
+      "estimated_time_min": 51,
+      "trashLevel": 5
+    },
+    {
+      "id": 56,
+      "name": "Breeze Trail",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 5.3,
+      "estimated_time_min": 45,
+      "trashLevel": 1
+    },
+    {
+      "id": 57,
+      "name": "Breeze Forest Path",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 4.7,
+      "estimated_time_min": 54,
+      "trashLevel": 4
+    },
+    {
+      "id": 58,
+      "name": "Breeze Lakeside Trail",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 4.0,
+      "estimated_time_min": 39,
+      "trashLevel": 5
+    },
+    {
+      "id": 59,
+      "name": "Breeze Riverside Path",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 4.8,
+      "estimated_time_min": 33,
+      "trashLevel": 2
+    },
+    {
+      "id": 60,
+      "name": "Breeze Strolling Path",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 5.9,
+      "estimated_time_min": 41,
+      "trashLevel": 5
+    },
+    {
+      "id": 61,
+      "name": "Green Jogging Trail",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 2.1,
+      "estimated_time_min": 54,
+      "trashLevel": 5
+    },
+    {
+      "id": 62,
+      "name": "Green Running Road",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 4.1,
+      "estimated_time_min": 34,
+      "trashLevel": 5
+    },
+    {
+      "id": 63,
+      "name": "Green Walking Trail",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 3.0,
+      "estimated_time_min": 29,
+      "trashLevel": 3
+    },
+    {
+      "id": 64,
+      "name": "Green Plogging Course",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 3.1,
+      "estimated_time_min": 30,
+      "trashLevel": 5
+    },
+    {
+      "id": 65,
+      "name": "Green Loop Trail",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 4.9,
+      "estimated_time_min": 48,
+      "trashLevel": 4
+    },
+    {
+      "id": 66,
+      "name": "Green Trail",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 2.6,
+      "estimated_time_min": 48,
+      "trashLevel": 4
+    },
+    {
+      "id": 67,
+      "name": "Green Forest Path",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 3.8,
+      "estimated_time_min": 24,
+      "trashLevel": 2
+    },
+    {
+      "id": 68,
+      "name": "Green Lakeside Trail",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 3.1,
+      "estimated_time_min": 24,
+      "trashLevel": 1
+    },
+    {
+      "id": 69,
+      "name": "Green Riverside Path",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 5.5,
+      "estimated_time_min": 38,
+      "trashLevel": 4
+    },
+    {
+      "id": 70,
+      "name": "Green Strolling Path",
+      "location": "Gangnam-gu, Seoul",
+      "distance_km": 3.8,
+      "estimated_time_min": 21,
+      "trashLevel": 4
+    },
+    {
+      "id": 71,
+      "name": "Clear Jogging Trail",
+      "location": "Mapo-gu, Seoul",
+      "distance_km": 5.6,
+      "estimated_time_min": 58,
+      "trashLevel": 3
+    },
+    {
+      "id": 72,
+      "name": "Clear Running Road",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 3.2,
+      "estimated_time_min": 27,
+      "trashLevel": 2
+    },
+    {
+      "id": 73,
+      "name": "Clear Walking Trail",
+      "location": "Gangdong-gu, Seoul",
+      "distance_km": 5.0,
+      "estimated_time_min": 36,
+      "trashLevel": 3
+    },
+    {
+      "id": 74,
+      "name": "Clear Plogging Course",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 3.4,
+      "estimated_time_min": 50,
+      "trashLevel": 2
+    },
+    {
+      "id": 75,
+      "name": "Clear Loop Trail",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 5.6,
+      "estimated_time_min": 34,
+      "trashLevel": 5
+    },
+    {
+      "id": 76,
+      "name": "Clear Trail",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 5.1,
+      "estimated_time_min": 49,
+      "trashLevel": 5
+    },
+    {
+      "id": 77,
+      "name": "Clear Forest Path",
+      "location": "Gangdong-gu, Seoul",
+      "distance_km": 3.8,
+      "estimated_time_min": 51,
+      "trashLevel": 5
+    },
+    {
+      "id": 78,
+      "name": "Clear Lakeside Trail",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 2.9,
+      "estimated_time_min": 54,
+      "trashLevel": 3
+    },
+    {
+      "id": 79,
+      "name": "Clear Riverside Path",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 4.1,
+      "estimated_time_min": 51,
+      "trashLevel": 3
+    },
+    {
+      "id": 80,
+      "name": "Clear Strolling Path",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 5.8,
+      "estimated_time_min": 33,
+      "trashLevel": 4
+    },
+    {
+      "id": 81,
+      "name": "Fresh Jogging Trail",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 5.0,
+      "estimated_time_min": 34,
+      "trashLevel": 2
+    },
+    {
+      "id": 82,
+      "name": "Fresh Running Road",
+      "location": "Gangdong-gu, Seoul",
+      "distance_km": 2.4,
+      "estimated_time_min": 51,
+      "trashLevel": 5
+    },
+    {
+      "id": 83,
+      "name": "Fresh Walking Trail",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 3.3,
+      "estimated_time_min": 58,
+      "trashLevel": 1
+    },
+    {
+      "id": 84,
+      "name": "Fresh Plogging Course",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 2.4,
+      "estimated_time_min": 54,
+      "trashLevel": 4
+    },
+    {
+      "id": 85,
+      "name": "Fresh Loop Trail",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 4.5,
+      "estimated_time_min": 46,
+      "trashLevel": 5
+    },
+    {
+      "id": 86,
+      "name": "Fresh Trail",
+      "location": "Gangdong-gu, Seoul",
+      "distance_km": 3.3,
+      "estimated_time_min": 32,
+      "trashLevel": 5
+    },
+    {
+      "id": 87,
+      "name": "Fresh Forest Path",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 3.1,
+      "estimated_time_min": 53,
+      "trashLevel": 2
+    },
+    {
+      "id": 88,
+      "name": "Fresh Lakeside Trail",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 5.5,
+      "estimated_time_min": 20,
+      "trashLevel": 1
+    },
+    {
+      "id": 89,
+      "name": "Fresh Riverside Path",
+      "location": "Songpa-gu, Seoul",
+      "distance_km": 3.2,
+      "estimated_time_min": 37,
+      "trashLevel": 2
+    },
+    {
+      "id": 90,
+      "name": "Fresh Strolling Path",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 5.2,
+      "estimated_time_min": 54,
+      "trashLevel": 3
+    },
+    {
+      "id": 91,
+      "name": "Calm Jogging Trail",
+      "location": "Gangnam-gu, Seoul",
+      "distance_km": 3.0,
+      "estimated_time_min": 35,
+      "trashLevel": 1
+    },
+    {
+      "id": 92,
+      "name": "Calm Running Road",
+      "location": "Goyang-si, Gyeonggi-do",
+      "distance_km": 2.5,
+      "estimated_time_min": 33,
+      "trashLevel": 4
+    },
+    {
+      "id": 93,
+      "name": "Calm Walking Trail",
+      "location": "Seocho-gu, Seoul",
+      "distance_km": 5.0,
+      "estimated_time_min": 52,
+      "trashLevel": 5
+    },
+    {
+      "id": 94,
+      "name": "Calm Plogging Course",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 3.1,
+      "estimated_time_min": 46,
+      "trashLevel": 4
+    },
+    {
+      "id": 95,
+      "name": "Calm Loop Trail",
+      "location": "Jung-gu, Seoul",
+      "distance_km": 4.3,
+      "estimated_time_min": 57,
+      "trashLevel": 5
+    },
+    {
+      "id": 96,
+      "name": "Calm Trail",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 5.3,
+      "estimated_time_min": 55,
+      "trashLevel": 5
+    },
+    {
+      "id": 97,
+      "name": "Calm Forest Path",
+      "location": "Anyang-si, Gyeonggi-do",
+      "distance_km": 3.5,
+      "estimated_time_min": 24,
+      "trashLevel": 5
+    },
+    {
+      "id": 98,
+      "name": "Calm Lakeside Trail",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 3.8,
+      "estimated_time_min": 32,
+      "trashLevel": 2
+    },
+    {
+      "id": 99,
+      "name": "Calm Riverside Path",
+      "location": "Suwon-si, Gyeonggi-do",
+      "distance_km": 4.2,
+      "estimated_time_min": 48,
+      "trashLevel": 5
+    },
+    {
+      "id": 100,
+      "name": "Calm Strolling Path",
+      "location": "Seongnam-si, Gyeonggi-do",
+      "distance_km": 3.8,
+      "estimated_time_min": 29,
+      "trashLevel": 5
+    }
+  ]
+}
