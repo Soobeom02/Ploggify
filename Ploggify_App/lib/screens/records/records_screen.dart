@@ -4,31 +4,16 @@ import '../../models/plog_models.dart';
 import '../../widgets/common_cards.dart';
 
 class RecordsScreen extends StatelessWidget {
-  const RecordsScreen({super.key});
+  final List<PlogSession> sessions;
+
+  const RecordsScreen({
+    super.key,
+    required this.sessions,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final sessions = [
-      PlogSession(
-        id: '1',
-        date: DateTime.now().subtract(const Duration(days: 1)),
-        routeName: '한강 마포 러닝 코스',
-        distanceKm: 5.1,
-        durationMin: 32,
-        trashCount: 27,
-        trashWeightKg: 1.3,
-      ),
-      PlogSession(
-        id: '2',
-        date: DateTime.now().subtract(const Duration(days: 3)),
-        routeName: '성수 뚝섬 러닝 루트',
-        distanceKm: 3.2,
-        durationMin: 21,
-        trashCount: 9,
-        trashWeightKg: 0.4,
-      ),
-    ];
-
+    // 총합 통계
     final totalDistance =
     sessions.fold<double>(0, (prev, s) => prev + s.distanceKm);
     final totalTrash =
@@ -40,31 +25,43 @@ class RecordsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Records',
-                style: Theme.of(context).textTheme.headlineLarge),
+            Text(
+              'Records',
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
             const SizedBox(height: 16),
             GlassCard(
               child: Row(
                 children: [
                   _StatColumn(
-                    label: '총 거리',
+                    label: 'Total distance',
                     value: '${totalDistance.toStringAsFixed(1)} km',
                   ),
                   const SizedBox(width: 24),
                   _StatColumn(
-                    label: '총 쓰레기 개수',
-                    value: '$totalTrash 개',
+                    label: 'Total trash collected',
+                    value: '$totalTrash items',
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 16),
             Expanded(
-              child: ListView.separated(
+              child: sessions.isEmpty
+                  ? const Center(
+                child: Text(
+                  'No plogging records yet.\nStart your first run!',
+                  textAlign: TextAlign.center,
+                ),
+              )
+                  : ListView.separated(
                 itemCount: sessions.length,
                 separatorBuilder: (_, __) => const SizedBox(height: 12),
                 itemBuilder: (context, index) {
                   final s = sessions[index];
+                  final detailText =
+                  _formatTrashDetails(s.trashDetails);
+
                   return GlassCard(
                     padding: const EdgeInsets.all(16),
                     child: Row(
@@ -95,7 +92,7 @@ class RecordsScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                '${_formatDate(s.date)} · ${s.distanceKm.toStringAsFixed(1)} km · ${s.durationMin}분',
+                                '${_formatDate(s.date)} · ${s.distanceKm.toStringAsFixed(1)} km · ${s.durationMin} min',
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.grey[600],
@@ -103,12 +100,22 @@ class RecordsScreen extends StatelessWidget {
                               ),
                               const SizedBox(height: 6),
                               Text(
-                                '쓰레기 ${s.trashCount}개 · ${s.trashWeightKg.toStringAsFixed(1)} kg',
+                                'Trash ${s.trashCount} items · ${s.trashWeightKg.toStringAsFixed(1)} kg',
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: Colors.grey[800],
                                 ),
                               ),
+                              if (detailText.isNotEmpty) ...[
+                                const SizedBox(height: 4),
+                                Text(
+                                  'Types: $detailText',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.grey[700],
+                                  ),
+                                ),
+                              ],
                             ],
                           ),
                         )
@@ -126,6 +133,20 @@ class RecordsScreen extends StatelessWidget {
 
   String _formatDate(DateTime d) =>
       '${d.year}.${d.month.toString().padLeft(2, '0')}.${d.day.toString().padLeft(2, '0')}';
+
+  /// 타입별 쓰레기 요약 텍스트 생성
+  /// 예: {"Plastic": 3, "Metal": 2, "Paper": 1}
+  /// -> "Plastic 3 · Metal 2 · Paper 1"
+  String _formatTrashDetails(Map<String, int> details) {
+    if (details.isEmpty) return '';
+
+    final entries = details.entries.toList()
+      ..sort((a, b) => b.value.compareTo(a.value)); // 많이 나온 순으로
+
+    // 너무 길어지지 않게 상위 3개까지만 보여줌
+    final limited = entries.take(3).map((e) => '${e.key} ${e.value}');
+    return limited.join(' · ');
+  }
 }
 
 class _StatColumn extends StatelessWidget {
