@@ -2,75 +2,253 @@
 import 'package:flutter/material.dart';
 import '../../theme/app_theme.dart';
 import '../../widgets/common_cards.dart';
+import '../../models/plog_models.dart';
 
 class DashboardScreen extends StatelessWidget {
-  const DashboardScreen({super.key});
+  final List<PlogSession> sessions;
+
+  const DashboardScreen({
+    super.key,
+    required this.sessions,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final myRankRun = 3;
-    final myRankTrash = 1;
+    // ─────────────────────────────────────
+    // 1. 내 기록 집계
+    // ─────────────────────────────────────
+    final totalDistance =
+    sessions.fold<double>(0, (prev, s) => prev + s.distanceKm);
+    final totalTrash =
+    sessions.fold<int>(0, (prev, s) => prev + s.trashCount);
+
+    // 최근 7일 거리 데이터
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+
+    final last7Days = List.generate(
+      7,
+          (i) => today.subtract(Duration(days: 6 - i)),
+    );
+
+    final weeklyDistances = <double>[];
+    final weeklyLabels = <String>[];
+
+    for (final day in last7Days) {
+      final daySessions = sessions.where((s) {
+        final d = DateTime(s.date.year, s.date.month, s.date.day);
+        return d == day;
+      });
+
+      final dSum =
+      daySessions.fold<double>(0, (prev, s) => prev + s.distanceKm);
+      weeklyDistances.add(dSum);
+
+      weeklyLabels.add(_weekdayLabel(day.weekday));
+    }
+
+    // ─────────────────────────────────────
+    // 2. 더미 친구 랭킹 데이터
+    // ─────────────────────────────────────
+
+    final meStat = _UserStat(
+      name: 'You',
+      distance: totalDistance,
+      trash: totalTrash,
+      isMe: true,
+    );
+
+    // 친구 더미 데이터 (총 누적 기준)
+    final others = <_UserStat>[
+      _UserStat(name: 'minseok', distance: 42.3, trash: 310),
+      _UserStat(name: 'yejin', distance: 27.8, trash: 180),
+      _UserStat(name: 'junhyeong', distance: 19.4, trash: 220),
+      _UserStat(name: 'soobeom', distance: 15.6, trash: 150),
+    ];
+
+    final allForDistance = [meStat, ...others]..sort(
+          (a, b) => b.distance.compareTo(a.distance),
+    );
+    final allForTrash = [meStat, ...others]..sort(
+          (a, b) => b.trash.compareTo(a.trash),
+    );
+
+    final myRankRun = allForDistance.indexWhere((u) => u.isMe) + 1;
+    final myRankTrash = allForTrash.indexWhere((u) => u.isMe) + 1;
+
+    final topDistance = allForDistance.take(3).toList();
+    final topTrash = allForTrash.take(3).toList();
 
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Dashboard',
-                style: Theme.of(context).textTheme.headlineLarge),
-            const SizedBox(height: 16),
-            GlassCard(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    '오늘의 나',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      _RankPill(
-                        label: '러닝 거리 순위',
-                        rank: myRankRun,
-                      ),
-                      const SizedBox(width: 10),
-                      _RankPill(
-                        label: '쓰레기 수집 순위',
-                        rank: myRankTrash,
-                        highlight: true,
-                      ),
-                    ],
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Dashboard',
+                style: Theme.of(context).textTheme.headlineLarge,
               ),
-            ),
-            const SizedBox(height: 16),
-            GlassCard(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    '주간 플로깅 요약',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16,
+              const SizedBox(height: 16),
+
+              // ── 오늘의 나 요약 + 랭킹 ────────────────────────────────
+              GlassCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Today\'s me',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 12),
-                  const _MiniBarChart(),
-                ],
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        _RankPill(
+                          label: 'Running distance rank',
+                          rank: myRankRun,
+                        ),
+                        const SizedBox(width: 10),
+                        _RankPill(
+                          label: 'Trash collection rank',
+                          rank: myRankTrash,
+                          highlight: true,
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      'Total distance: ${totalDistance.toStringAsFixed(1)} km · Total trash: $totalTrash items',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 16),
+
+              // ── 주간 플로깅 요약 ────────────────────────────────────
+              GlassCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Weekly plogging summary',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    _MiniBarChart(
+                      values: weeklyDistances,
+                      labels: weeklyLabels,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // ── 리더보드 ───────────────────────────────────────────
+              GlassCard(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Leaderboard',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      'Compare your distance and trash collection with your friends.',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    const Text(
+                      'Top distance',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    ...topDistance.map(
+                          (u) => _LeaderboardRow(
+                        name: u.name,
+                        value: '${u.distance.toStringAsFixed(1)} km',
+                        highlight: u.isMe,
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    const Text(
+                      'Top trash collected',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 6),
+                    ...topTrash.map(
+                          (u) => _LeaderboardRow(
+                        name: u.name,
+                        value: '${u.trash} items',
+                        highlight: u.isMe,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );
   }
+
+  String _weekdayLabel(int weekday) {
+    switch (weekday) {
+      case DateTime.monday:
+        return 'Mon';
+      case DateTime.tuesday:
+        return 'Tue';
+      case DateTime.wednesday:
+        return 'Wed';
+      case DateTime.thursday:
+        return 'Thu';
+      case DateTime.friday:
+        return 'Fri';
+      case DateTime.saturday:
+        return 'Sat';
+      case DateTime.sunday:
+        return 'Sun';
+      default:
+        return '';
+    }
+  }
+}
+
+class _UserStat {
+  final String name;
+  final double distance;
+  final int trash;
+  final bool isMe;
+
+  _UserStat({
+    required this.name,
+    required this.distance,
+    required this.trash,
+    this.isMe = false,
+  });
 }
 
 class _RankPill extends StatelessWidget {
@@ -122,23 +300,38 @@ class _RankPill extends StatelessWidget {
   }
 }
 
-// 간단한 수제 바차트 (패키지 없이도 느낌만)
 class _MiniBarChart extends StatelessWidget {
-  const _MiniBarChart();
+  final List<double> values;
+  final List<String> labels;
+
+  const _MiniBarChart({
+    required this.values,
+    required this.labels,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final data = [2.1, 3.4, 4.0, 5.2, 3.8, 4.6, 1.9]; // km
+    if (values.isEmpty || values.every((v) => v == 0)) {
+      return const SizedBox(
+        height: 80,
+        child: Center(
+          child: Text(
+            'No runs in the last 7 days.',
+            style: TextStyle(fontSize: 12, color: Colors.grey),
+          ),
+        ),
+      );
+    }
 
-    final maxVal = data.reduce((a, b) => a > b ? a : b);
+    final maxVal = values.reduce((a, b) => a > b ? a : b);
 
     return SizedBox(
       height: 120,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
-        children: List.generate(data.length, (index) {
-          final value = data[index];
-          final height = (value / maxVal) * 90;
+        children: List.generate(values.length, (index) {
+          final value = values[index];
+          final height = maxVal == 0 ? 0 : (value / maxVal) * 90;
 
           return Expanded(
             child: Column(
@@ -147,23 +340,64 @@ class _MiniBarChart extends StatelessWidget {
                 AnimatedContainer(
                   duration: const Duration(milliseconds: 400),
                   curve: Curves.easeOutCubic,
-                  height: height,
+                  height: height.toDouble(),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(18),
-                    color: index == data.length - 1
+                    color: index == values.length - 1
                         ? AppTheme.accent
                         : Colors.orange.withOpacity(0.3),
                   ),
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  ['월', '화', '수', '목', '금', '토', '일'][index],
+                  labels[index],
                   style: const TextStyle(fontSize: 11),
                 ),
               ],
             ),
           );
         }),
+      ),
+    );
+  }
+}
+
+class _LeaderboardRow extends StatelessWidget {
+  final String name;
+  final String value;
+  final bool highlight;
+
+  const _LeaderboardRow({
+    required this.name,
+    required this.value,
+    required this.highlight,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final color = highlight ? AppTheme.accent : Colors.black87;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 2),
+      child: Row(
+        children: [
+          Text(
+            name,
+            style: TextStyle(
+              fontWeight: highlight ? FontWeight.w700 : FontWeight.w500,
+              color: color,
+            ),
+          ),
+          const Spacer(),
+          Text(
+            value,
+            style: TextStyle(
+              fontSize: 12,
+              color: highlight ? color : Colors.grey[700],
+              fontWeight: highlight ? FontWeight.w700 : FontWeight.w500,
+            ),
+          ),
+        ],
       ),
     );
   }
