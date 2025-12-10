@@ -1,0 +1,9 @@
+version: 2
+
+build:
+  os: ubuntu-22.04
+  tools:
+    python: "3.10"
+
+sphinx:
+  configuration: docs/conf.py  # conf.py 파일이 docs 폴더 안에 있다고 가정
