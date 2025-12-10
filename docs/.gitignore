@@ -1,0 +1,11 @@
+# 빌드 결과물 제외
+_build/
+build/
+
+# 파이썬 캐시 제외
+__pycache__/
+*.py[cod]
+
+# 에디터 설정 제외
+.vscode/
+.idea/
