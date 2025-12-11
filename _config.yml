@@ -1,0 +1,28 @@
+title: Ploggify
+description: "Plogging + Gamified Running for a Cleaner City"
+url: "<https://soobeom02.github.io>"
+baseurl: "/Ploggify"   # => final adress: <https://soobeom02.github.io/Ploggify/>
+
+# Jekyll baisc option
+markdown: kramdown
+highlighter: rouge
+
+# ❗custom theme
+plugins:
+  - jekyll-seo-tag
+
+# menu
+nav_items:
+  - name: "Home"
+    url: "/"
+  - name: "Features"
+    url: "/features/"
+  - name: "Community"
+    url: "/community/"
+  - name: "Contact"
+    url: "/contact/"
+
+# ReadTheDocs / GitHub
+project:
+  docs_url: "<https://ploggify-oss2025.readthedocs.io/en/latest/>"
+  repo_url: "<https://github.com/Soobeom02/Ploggify>"
