@@ -1,7 +1,8 @@
 # Ploggify 🌍
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![GitHub issues](https://img.shields.io/github/issues/Soobeom02/Ploggify)](https://github.com/Soobeom02/Ploggify/issues)
+[![Documentation Status](https://readthedocs.org/projects/ploggify-oss2025/badge/?version=latest)](https://ploggify-oss2025.readthedocs.io/en/latest/)
 
 **Ploggify is a web service that combines running with environmental protection, allowing users to track and share their plogging activities.**
 
@@ -17,6 +18,13 @@ Ploggify was created to solve this problem. Our goal is to create a new culture 
 
 ---
 
+## 📚 Documentation
+
+Full documentation including architecture, API references, and guides is available at:
+👉 **[Ploggify Read the Docs](https://ploggify-oss2025.readthedocs.io/en/latest/)**
+
+---
+
 ## ✨ Core Features
 
 -   **[PLANNED] GPS-Based Plogging Route and Distance Tracking**: Accurately track and record users' running routes and distances via GPS.
@@ -29,10 +37,10 @@ Ploggify was created to solve this problem. Our goal is to create a new culture 
 
 ## 🛠️ Tech Stack
 
--   **Frontend**: React.js, Leaflet.js, Material-UI (or Tailwind CSS)
--   **Backend**: Node.js, Express.js
--   **Database**: PostgreSQL
--   **AI/ML**: YOLO, Flask
+-   **Frontend**: Flutter(Dart)
+-   **Backend**: JAVA 21 (Spring Boot)
+-   **Database**: H2 Database
+-   **AI/ML**: Python, YOLO(Roboflow)
 -   **Version Control**: Git & GitHub
 -   **Communication**: Slack/Discord
 
@@ -44,7 +52,7 @@ To get a local copy up and running, please follow these simple steps.
 
 ### Prerequisites
 
--   Node.js
+-   JAVA21
 -   npm (Node Package Manager)
 
 ### Installation
@@ -72,10 +80,10 @@ To get a local copy up and running, please follow these simple steps.
 
 | Name          | Role                                       | Responsibilities                                                               |
 | :------------ | :----------------------------------------- | :----------------------------------------------------------------------------- |
-| **Minseok Kim** | Backend Developer, Version Control Manager | Build Node.js/Express API, design/manage PostgreSQL database, manage Git workflow. |
+| **Minseok Kim** | Backend Developer, Version Control Manager | Build JAVA/Express API, design/manage H2 database, manage Git workflow. |
 | **Yejin Noh** | Frontend Developer, Model Co-Developer (UI)  | Design React-based UI/UX, co-develop YOLO-based models.                        |
 | **JunHyeong Yu**| AI Model Developer, Documentation Lead     | Develop YOLO-based models, provide Flask API integration, manage documentation.      |
-| **Soobeon Lee** | Full-stack Developer (Backend+Frontend)    | Develop app UI & map viewer with Flutter/Dart, integrate React with backend APIs.    |
+| **Soobeon Lee** | Full-stack Developer (Backend+Frontend)    | Develop app UI & map viewer with Flutter/Dart, integrate backend APIs.    |
 
 ---
 
