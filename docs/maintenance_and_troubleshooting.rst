@@ -1,7 +1,7 @@
 Maintenance and Troubleshooting
 ===============================
 
-이 섹션에서는 개발 및 테스트 중 자주 발생하는 문제와 해결 방법을 다룹니다.
+This section covers common issues that occur during development and testing, along with their solutions.
 
 API recommend call failed (404 or 500)
 ---------------------------------------
